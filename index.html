@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clues by Sam – Birthday Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Minimalistischer Container -->
+      <main class="grid-container" id="grid-container">
+        <!-- Wird dynamisch per JS gefüllt -->
+      </main>
+
+      <!-- Success Modal / Overlay -->
+      <div id="success-modal" class="modal hidden">
+        <div class="modal-content">
+          <h2>🎉 AKTE GELÖST!</h2>
+          <p>Du hast alle Kriminellen und Unschuldigen korrekt identifiziert!</p>
+          <p id="success-stats" style="color: var(--accent-color); font-weight: 600; margin-bottom: 20px;"></p>
+          <button id="restart-game-btn">Erneut spielen</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Minimalist Card Action Modal -->
+    <div id="action-modal" class="card-modal hidden">
+      <div class="card-modal-content">
+        <div id="modal-feedback" class="modal-feedback"></div>
+        <div class="modal-buttons">
+          <button id="btn-innocent" class="btn-innocent">Unschuldig</button>
+          <button id="btn-criminal" class="btn-criminal">Kriminell</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
