@@ -2,32 +2,32 @@
 // Kette: A3 -> D3 -> A4, A5 -> B2 -> B1 -> C2, C3 -> B3, D5 -> C5 -> B4 -> D4 -> D1, D2 -> C4 -> C1 -> A1 -> A2 -> B5
 const GRID_DATA = [
   // Spalte A
-  { id: 'A1', name: 'Johanna', job: 'builder', role: 'innocent', clue: 'I bet the thief is a cold fish', clueType: 'joke', avatar: '👷' },
-  { id: 'A2', name: 'Arthur', job: 'baby', role: 'innocent', clue: 'The thief is slippery as an eel!', clueType: 'joke', avatar: '👷' },
-  { id: 'A3', name: 'A3', job: 'builder', role: 'innocent', clue: 'Quita (D3) ist eine von 3 Grünen in Reihe 3', clueType: 'logic', avatar: '👷' },
-  { id: 'A4', name: 'Claudia Roth', job: 'Grüne', role: 'innocent', clue: 'Einer der 2 Roten neben Hilda (C2) befindet sich am Rand', clueType: 'logic', avatar: '🎤' },
-  { id: 'A5', name: 'Fanny', job: 'singer', role: 'innocent', clue: 'Someone stole my pet fish!', clueType: 'joke', avatar: '🎤' },
+  { id: 'A1', name: 'Johanna', job: 'Bauleitung', role: 'innocent', clue: '😘', clueType: 'joke', avatar: '👷‍♀️' },
+  { id: 'A2', name: 'Arthur', job: 'Baby', role: 'innocent', clue: 'Wääääh! Plärr! Rülps. Pups!', clueType: 'joke', avatar: '👶' },
+  { id: 'A3', name: 'Bernhard', job: 'Professor', role: 'innocent', clue: 'Daniel ist einer von 3 Grünen in Reihe 3.', clueType: 'logic', avatar: '👨‍🏫' },
+  { id: 'A4', name: 'Claudia Roth', job: 'Grüne', role: 'innocent', clue: 'Einer der 2 Roten neben Pizzabote befindet sich am Rand.', clueType: 'logic', avatar: '🍀' },
+  { id: 'A5', name: 'Fanny', job: 'Sängerin', role: 'innocent', clue: 'Dieser Spruch hilft dir nicht, ist aber echt funny!', clueType: 'joke', avatar: '🇫🇷' },
 
   // Spalte B
-  { id: 'B1', name: 'B1', job: 'judge', role: 'innocent', clue: 'Einer der 2 Roten am Rand ist mein Nachbar', clueType: 'logic', avatar: '⚖️' },
-  { id: 'B2', name: 'Harry', job: 'pawn', role: 'innocent', clue: 'Einer der 2 Roten neben mir ist der Nachbar von Berat (B1)', clueType: 'logic', avatar: '👷' },
-  { id: 'B3', name: 'Annegret', job: 'singer', role: 'innocent', clue: 'Was it a red herring by any chance?', clueType: 'joke', avatar: '🎤' },
-  { id: 'B4', name: 'Klaus', job: 'singer', role: 'criminal', clue: 'Es gibt genauso viele grüne Coder wie grüne Richter', clueType: 'logic', avatar: '🎤' },
-  { id: 'B5', name: 'Michi', job: 'coder', role: 'criminal', clue: 'Will you let me off the hook if I give it back?', clueType: 'joke', avatar: '💻' },
+  { id: 'B1', name: 'Eva', job: 'Musiker', role: 'innocent', clue: 'Einer der 2 Roten am Rand ist mein Nachbar.', clueType: 'logic', avatar: '🤱' },
+  { id: 'B2', name: 'Harry', job: 'Bauer', role: 'innocent', clue: 'Einer der 2 Roten neben mir ist der Nachbar von Eva.', clueType: 'logic', avatar: '👷' },
+  { id: 'B3', name: 'Annegret', job: 'Sängerin', role: 'innocent', clue: 'Ich bin gleich da, mach mir nur noch schnell einen Kaffee!', clueType: 'joke', avatar: '👩‍🦰' },
+  { id: 'B4', name: 'Klaus', job: 'Sänger', role: 'criminal', clue: 'Es gibt genauso viele grüne Coder wie grüne Musiker.', clueType: 'logic', avatar: '🐭' },
+  { id: 'B5', name: 'Tobi H.', job: 'Coder', role: 'criminal', clue: 'I\'ll take one Entrecote, please!', clueType: 'joke', avatar: '💻' },
 
   // Spalte C
-  { id: 'C1', name: 'Barbara Salesch', job: 'judge', role: 'criminal', clue: 'Don\'t you have bigger fish to fry?', clueType: 'joke', avatar: '⚖️' },
-  { id: 'C2', name: 'Pizzabote', job: 'pilot', role: 'innocent', clue: 'Einer der 2 Roten in Spalte C ist in Reihe 3', clueType: 'logic', avatar: '👩‍🏫' },
-  { id: 'C3', name: 'Martin Luther', job: 'teacher', role: 'criminal', clue: 'Zoya (D5) ist eine von Yusefs (C5) 3 grünen Nachbarn', clueType: 'logic', avatar: '👩‍🏫' },
-  { id: 'C4', name: 'Tobi', job: 'coder', role: 'innocent', clue: 'There are plenty of fish in the sea, but only a handful of criminals!', clueType: 'joke', avatar: '💻' },
-  { id: 'C5', name: 'Niklas', job: 'coder', role: 'innocent', clue: 'Es gibt eine ungerade Anzahl von Roten in Reihe 1', clueType: 'logic', avatar: '💻' },
+  { id: 'C1', name: 'Nikolaus', job: 'Musiker', role: 'criminal', clue: 'Jetzt bitte einmal die Männer und die Tenöre!', clueType: 'joke', avatar: '🎅' },
+  { id: 'C2', name: 'Pizzabote', job: 'Pilot', role: 'innocent', clue: 'Einer der 2 Roten in Spalte C ist in Reihe 3.', clueType: 'logic', avatar: '🍕' },
+  { id: 'C3', name: 'Luther', job: 'Reformator', role: 'criminal', clue: 'Micha ist eine von Michis 3 grünen Nachbarn.', clueType: 'logic', avatar: '✝️' },
+  { id: 'C4', name: 'Niklas', job: 'Coder', role: 'innocent', clue: 'Kann ich mir mal kurz dein Handy leihen?', clueType: 'joke', avatar: '💻' },
+  { id: 'C5', name: 'Michi', job: 'Coder', role: 'innocent', clue: 'Es gibt eine ungerade Anzahl von Roten in Reihe 1.', clueType: 'logic', avatar: '💻' },
 
   // Spalte D
-  { id: 'D1', name: 'D1', job: 'judge', role: 'innocent', clue: 'Quita (D3) hat mindestens 3 grüne Nachbarn', clueType: 'logic', avatar: '⚖️' },
-  { id: 'D2', name: 'D2', job: 'judge', role: 'innocent', clue: 'You\'re slowly reeling them in...', clueType: 'joke', avatar: '⚖️' },
-  { id: 'D3', name: 'Daniel', job: 'teacher', role: 'innocent', clue: 'Es gibt 2 Grüne unter Kumar (A3)', clueType: 'logic', avatar: '👩‍🏫' },
-  { id: 'D4', name: 'Sophie', job: 'teacher', role: 'innocent', clue: 'Es gibt genau 2 Grüne links von Emma (D1)', clueType: 'logic', avatar: '👩‍🏫' },
-  { id: 'D5', name: 'Micha', job: 'coder', role: 'innocent', clue: 'We\'d better cast a wide net to catch the thief...', clueType: 'joke', avatar: '💻' }
+  { id: 'D1', name: 'Jörg', job: 'Musiker', role: 'innocent', clue: 'Daniel hat mindestens 3 grüne Nachbarn.', clueType: 'logic', avatar: '👨‍🍼' },
+  { id: 'D2', name: 'Tobi D.', job: 'Musiker', role: 'innocent', clue: 'Zunächst möchte ich gern eine kurze Rede über die Weltlage halten. Musik ist immer auch...', clueType: 'joke', avatar: '🎼' },
+  { id: 'D3', name: 'Daniel', job: 'Lehrer', role: 'innocent', clue: 'Es gibt 2 Grüne unter Bernhard.', clueType: 'logic', avatar: '👨‍🏫' },
+  { id: 'D4', name: 'Sophie', job: 'Mixed 1', role: 'innocent', clue: 'Es gibt genau 2 Grüne links von Jörg.', clueType: 'logic', avatar: '🥏' },
+  { id: 'D5', name: 'Micha', job: 'Coder', role: 'innocent', clue: 'Alle Leute sind entweder Rot oder Grün, und dann gibt es noch die anderen, das sind die Schlimmsten!', clueType: 'joke', avatar: '💻' }
 ];
 
 const STEP_REQUIREMENTS = {
