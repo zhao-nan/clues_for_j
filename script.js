@@ -147,6 +147,25 @@ function renderGrid() {
       `;
     }
 
+    let nameContentHtml = '';
+    if (isSolved) {
+      nameContentHtml = `
+        <div class="name-info" style="width: 100%;">
+          <div class="card-name">${person.name}</div>
+          <div class="card-job">${person.job}</div>
+        </div>
+      `;
+    } else {
+      nameContentHtml = `
+        <div class="color-circle left-circle" data-card-id="${person.id}" data-side="left" style="background-color: ${circles.left || 'transparent'};"></div>
+        <div class="name-info">
+          <div class="card-name">${person.name}</div>
+          <div class="card-job">${person.job}</div>
+        </div>
+        <div class="color-circle right-circle" data-card-id="${person.id}" data-side="right" style="background-color: ${circles.right || 'transparent'};"></div>
+      `;
+    }
+
     card.innerHTML = `
       <div class="card-header">
         <span class="card-id">${person.id}</span>
@@ -154,24 +173,21 @@ function renderGrid() {
       </div>
       <div class="card-body">
         <div class="name-container">
-          <div class="color-circle left-circle" data-card-id="${person.id}" data-side="left" style="background-color: ${circles.left || 'transparent'};"></div>
-          <div class="name-info">
-            <div class="card-name">${person.name}</div>
-            <div class="card-job">${person.job}</div>
-          </div>
-          <div class="color-circle right-circle" data-card-id="${person.id}" data-side="right" style="background-color: ${circles.right || 'transparent'};"></div>
+          ${nameContentHtml}
         </div>
       </div>
       ${clueHtml}
     `;
 
-    // Kreis-Klicks abfangen (öffnen Farb-Picker)
-    card.querySelectorAll('.color-circle').forEach(circleEl => {
-      circleEl.addEventListener('click', (e) => {
-        e.stopPropagation();
-        openColorPicker(circleEl, person.id, circleEl.dataset.side);
+    // Kreis-Klicks abfangen (öffnen Farb-Picker) - nur wenn noch nicht gelöst
+    if (!isSolved) {
+      card.querySelectorAll('.color-circle').forEach(circleEl => {
+        circleEl.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openColorPicker(circleEl, person.id, circleEl.dataset.side);
+        });
       });
-    });
+    }
 
     // Hinweis-Klick zum Ausgrauen (Dimmen)
     const clueEl = card.querySelector('.card-clue');
