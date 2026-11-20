@@ -18,7 +18,7 @@ const GRID_DATA = [
   // Spalte C
   { id: 'C1', name: 'Nikolaus', job: 'Musiker', role: 'criminal', clue: 'Jetzt bitte einmal die Männer und die Tenöre!', clueType: 'joke', avatar: '🎅' },
   { id: 'C2', name: 'Pizzabote', job: 'Pilot', role: 'innocent', clue: 'Einer der 2 Roten in Spalte C ist in Reihe 3.', clueType: 'logic', avatar: '🍕' },
-  { id: 'C3', name: 'Luther', job: 'Reformator', role: 'criminal', clue: 'Micha ist eine von Michis 3 grünen Nachbarn.', clueType: 'logic', avatar: '✝️' },
+  { id: 'C3', name: 'Luther', job: 'Reformator', role: 'criminal', clue: 'Micha ist einer von Michis 3 grünen Nachbarn.', clueType: 'logic', avatar: '✝️' },
   { id: 'C4', name: 'Niklas', job: 'Coder', role: 'innocent', clue: 'Kann ich mir mal kurz dein Handy leihen?', clueType: 'joke', avatar: '💻' },
   { id: 'C5', name: 'Michi', job: 'Coder', role: 'innocent', clue: 'Es gibt eine ungerade Anzahl von Roten in Reihe 1.', clueType: 'logic', avatar: '💻' },
 
@@ -109,9 +109,8 @@ function initGame() {
     }
   });
 
-  document.getElementById('restart-game-btn').addEventListener('click', () => {
+  document.getElementById('close-success-btn').addEventListener('click', () => {
     successModal.classList.add('hidden');
-    initGame();
   });
 }
 
